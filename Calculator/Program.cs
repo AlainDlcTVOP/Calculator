@@ -7,19 +7,54 @@ namespace Assignment1
     {
         static void Addition()
         {
-            Console.WriteLine("addition");
+            Console.WriteLine("Enter a number\n");
+            var first = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the secound number\n");
+            var secound = Convert.ToInt32(Console.ReadLine());
+            var result = first + secound; 
+            Console.WriteLine($"{first} + {secound} = {result}");
+
         }
         static void Subtraction()
         {
-            Console.WriteLine("subtraction");
+
+            Console.WriteLine("Enter a number\n");
+            var first = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the secound number\n");
+            var secound = Convert.ToInt32(Console.ReadLine());
+            var result = first - secound;
+            Console.WriteLine($"{first} - {secound} = {result}");
         }
         static void Multiplication()
         {
-            Console.WriteLine("multiplication");
+
+            Console.WriteLine("Enter a number\n");
+            var first = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the secound number\n");
+            var secound = Convert.ToInt32(Console.ReadLine());
+            var result = first * secound;
+            Console.WriteLine($"{first} * {secound} = {result}");
         }
         static void Division()
         {
-            Console.WriteLine("division");
+            Console.WriteLine("Enter a number\n");
+            int x = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the secound number\n");
+            int y = Convert.ToInt32(Console.ReadLine());
+
+
+
+            try
+            {
+                Console.WriteLine("{0}/{1}= {2}", x, y, x / y);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Cannot divide by 0");
+              
+            }
+
+        
         }
         static void Main(string[] args)
         {
@@ -104,16 +139,3 @@ namespace Assignment1
 
 
 
-/*Your assignment is to create a basic Console-based calculator using C#. It should be able to 
-handle basic mathematical operations (addition, subtraction, multiplication, division), and be 
-able to present the results in a consistent way.
-Required Features:
-• The program should be able to perform basic mathematical operations (Math has 
-methods for more advanced operations if you include them).
-o Addition, Subtraction, Division, Multiplication, etc…
-• The program should keep running until the user chooses to end it.
-Code Requirements:
-• Each mathematical operation should be in its own method.
-o Division should inform the user if they try to divide by zero.
-• Use a loop and a menu system to keep the program running.
-*/
