@@ -38,9 +38,9 @@ namespace Assignment1
         static void Division()
         {
             Console.WriteLine("Enter a number\n");
-            int x = Convert.ToInt32(Console.ReadLine());
+            double x = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter the secound number\n");
-            int y = Convert.ToInt32(Console.ReadLine());
+            double y = Convert.ToInt32(Console.ReadLine());
 
 
 
