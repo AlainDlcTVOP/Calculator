@@ -1,69 +1,26 @@
 ﻿
+using Calculator;
 using System;
 
 namespace Assignment1
 {
-    class Program
+    class Program1
     {
-        static void Addition()
-        {
-            Console.WriteLine("Enter a number\n");
-            var first = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the secound number\n");
-            var secound = Convert.ToInt32(Console.ReadLine());
-            var result = first + secound; 
-            Console.WriteLine($"{first} + {secound} = {result}");
+       
 
-        }
-        static void Subtraction()
-        {
-
-            Console.WriteLine("Enter a number\n");
-            var first = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the secound number\n");
-            var secound = Convert.ToInt32(Console.ReadLine());
-            var result = first - secound;
-            Console.WriteLine($"{first} - {secound} = {result}");
-        }
-        static void Multiplication()
-        {
-
-            Console.WriteLine("Enter a number\n");
-            var first = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the secound number\n");
-            var secound = Convert.ToInt32(Console.ReadLine());
-            var result = first * secound;
-            Console.WriteLine($"{first} * {secound} = {result}");
-        }
-        static void Division()
-        {
-            Console.WriteLine("Enter a number\n");
-            double x = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter the secound number\n");
-            double y = Convert.ToInt32(Console.ReadLine());
-
-
-
-            try
-            {
-                Console.WriteLine("{0}/{1}= {2}", x, y, x / y);
-            }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("Cannot divide by 0");
-              
-            }
-
-        
-        }
+    
         static void Main(string[] args)
         {
+           
+            
+           
+
             bool finished = false;
 
             do
             {
                 Console.WriteLine("Calculator menu enter a number to choose a function.\n");
-              /*  basic mathematical operations(addition, subtraction, multiplication, division) */
+             
                 Console.WriteLine("1 --> addition.");
                 Console.WriteLine("2 --> subtraction.");
                 Console.WriteLine("3 --> multiplication.");
@@ -76,29 +33,59 @@ namespace Assignment1
 
 
                 int selection = int.Parse(Console.ReadLine());
-
+                cal c = new cal();
 
                 Console.Write("----------------------------------------------------------------------\n");
 
                 switch (selection)
                 {
                     case 1:
-                        Addition();
+                       
 
+
+
+                        Console.WriteLine("Enter 2 nums with comma (',') overload method");
+                        
+                        int[] add = inputRead();
+                      
+
+
+                        if (add.Length == 2)
+
+                           print(c.Addition(add[0], add[1]));
+                        
+                        else
+                            print(c.Addition(add));
+                        
                         break;
                         case 2:
-                        Subtraction();
+                        Console.WriteLine("Enter 2 nums with comma (',') overload method");
+                        int[] sub = inputRead();
+                        if (sub.Length == 2)
+
+                            print(c.Subtraction(sub[0], sub[1]));
+                        else
+                            print(c.Subtraction(sub));
                         break;
-                    case 3:
-                        Multiplication();
+
+                        case 3:
+                        Console.WriteLine("Enter 2 nums with comma (',') overload method");
+                        int[] mul = inputRead();
+                        if (mul.Length == 2)
+                            print(c.Multiplication(mul[0], mul[1]));
+                        else
+                            print(c.Multiplication(mul));
+                       
                         break;
                     case 4:
-                        Division();
+                        double first = Convert.ToDouble(Console.ReadLine());
+                        double sec = Convert.ToDouble(Console.ReadLine());
+                         Console.WriteLine(c.Division(first,sec));
                         break;
                     default:
                         Console.WriteLine("No valid selection please choose (1-4)");
                         break;
-
+                        
 
                 }
 
@@ -106,14 +93,14 @@ namespace Assignment1
 
 
                 Console.WriteLine("\nWill you like to choose another option? press Y to continue or Q to quit");
-                char c = char.Parse(Console.ReadLine());
+                char b = char.Parse(Console.ReadLine());
 
 
-                if (c == 'y')
+                if (b == 'y')
                 {
                     finished = false;
                 }
-                else if (c == 'q')
+                else if (b == 'q')
                 {
 
                     finished = true;
@@ -131,11 +118,30 @@ namespace Assignment1
 
         }
 
+        private static int[] inputRead()
+        {
+            string str = Console.ReadLine();
+          
 
+            string[] stringArray = str.Split(',');
+            //  Console.ReadLine().Replace(" ", "").Split(',').Select(str => int.Parse(str)).ToArray();
+            int[] convertedInt = Array.ConvertAll(stringArray, s => int.Parse(s));
+
+            return convertedInt;
+
+        }
+
+
+
+        private static void print(int display)
+        {
+            Console.WriteLine(display.ToString());
+        }
+        
     }
+   
+
 }
-
-
 
 
 
