@@ -47,9 +47,6 @@ namespace Assignment1
                         Console.WriteLine("Enter 2 nums with comma (',') overload method");
                         
                         int[] add = inputRead();
-                      
-
-
                         if (add.Length == 2)
 
                            print(c.Addition(add[0], add[1]));
@@ -90,11 +87,8 @@ namespace Assignment1
                 }
 
 
-
-
                 Console.WriteLine("\nWill you like to choose another option? press Y to continue or Q to quit");
                 char b = char.Parse(Console.ReadLine());
-
 
                 if (b == 'y')
                 {
@@ -112,8 +106,6 @@ namespace Assignment1
 
                 Console.Clear();
             } while (!finished);
-
-
 
 
         }

@@ -17,7 +17,6 @@ namespace Calculator
         public int Addition(int[] arr)
         {
 
-
             int x = 0;
 
 
@@ -26,9 +25,6 @@ namespace Calculator
                 x += i;
             }
             return x;
-
-
-
 
         }
 
@@ -58,8 +54,6 @@ namespace Calculator
         {
             int x = 1;
 
-
-
             foreach (int i in arr)
             {
                 x *= i;
@@ -73,7 +67,7 @@ namespace Calculator
         public double Division(double v1, double v2)
         {
 
-             if(v1 < v2 || v2 < v1)
+             if(v1 < v2 && v2 < v1)
             {
                 Console.WriteLine("Cannot divide by 0");
                 return 0;
@@ -81,8 +75,6 @@ namespace Calculator
             return v1 / v2;
         }
     }
-  
-
 }
 
       

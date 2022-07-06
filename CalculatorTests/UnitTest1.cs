@@ -10,9 +10,7 @@ namespace CalculatorTests
         {
             cal c = new cal();
             int result = c.Addition(1,2);
-            Assert.Equal(result, 3);
-
-            
+            Assert.Equal(result, 3);         
 
         }
         [Fact]
@@ -23,8 +21,6 @@ namespace CalculatorTests
             int result = c.Addition(input);
             Assert.Equal(result, 6);
 
-
-
         }
         [Fact]
         static void SubtractionTest()
@@ -32,7 +28,6 @@ namespace CalculatorTests
             cal c = new cal();
             int result = c.Subtraction(1, 2);
             Assert.Equal(result, -1);
-
 
         }
 
@@ -44,19 +39,15 @@ namespace CalculatorTests
             int result = c.Subtraction(input);
             Assert.Equal(result, -6);
 
-
         }
         [Fact]
         
         static void Multiplication()
         {
-
             cal c = new cal();
 
             int result = c.Multiplication(2,2);
             Assert.Equal(result, 4);
-
-
 
         }
         [Fact]
@@ -67,7 +58,6 @@ namespace CalculatorTests
             int result = c.Multiplication(input);
             Assert.Equal(result, 6);
 
-
         }
         [Fact]
         static void Division()
@@ -75,7 +65,6 @@ namespace CalculatorTests
             cal c = new cal();
             double result = c.Division(3, 0);
             Assert.Equal(result, 0);
-
 
         }
     }
