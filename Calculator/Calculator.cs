@@ -68,7 +68,7 @@ namespace Calculator
         public double Division(double v1, double v2)
         {
 
-            if (v1 <= 0 || v2 <= 0 )
+            if ( v2 == 0 )
             {
                 Console.WriteLine("Cannot divide by 0");
                 return 0;
