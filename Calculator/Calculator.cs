@@ -8,6 +8,7 @@ namespace Calculator
 {
     public class cal
     {
+        double result = 0;
         public int Addition(int v1, int v2)
         {
             return v1 + v2;
@@ -67,11 +68,12 @@ namespace Calculator
         public double Division(double v1, double v2)
         {
 
-             if(v1 < v2 && v2 < v1)
+            if (v1 <= 0 || v2 <= 0 )
             {
                 Console.WriteLine("Cannot divide by 0");
                 return 0;
             }
+
             return v1 / v2;
         }
     }
